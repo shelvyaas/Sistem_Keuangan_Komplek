@@ -1,83 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:background="@drawable/bg_login_gradient">
 
-    <LinearLayout
+    <!-- Ganti android:src="@drawable/img_perumahan" dengan foto perumahan asli di folder res/drawable -->
+    <ImageView
+        android:id="@+id/ivBgPerumahanLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:layout_height="460dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/perumahan_back"
+        android:contentDescription="Foto Komplek Perumahan" />
 
-        <ImageView
-            android:layout_width="88dp"
-            android:layout_height="88dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@mipmap/ic_launcher_round" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="461dp"
+        android:background="@drawable/bg_login_photo_overlay" />
 
-        <TextView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:text="Keuangan Komplek"
-            android:textColor="#0D7A00"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="56dp"
+            android:paddingBottom="32dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="28dp"
-            android:gravity="center"
-            android:text="Masuk sebagai Admin atau Warga"
-            android:textColor="#009DFF" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Keuangan Komplek"
+                android:textAlignment="center"
+                android:textColor="@color/warm_cream"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:lineSpacingExtra="2dp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Transparan, Rapi &amp; Terkelola Bersama"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etEmail"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="140dp" />
+
+            <!-- Floating Login Card -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="26dp"
+                app:cardElevation="8dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:hint="Password"
-            app:passwordToggleEnabled="true"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etPassword"
-                android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textColor="@color/text_dark"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="Masukkan email Anda"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="14dp"
+                        android:textColor="@color/text_dark"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Password"
+                        android:textColor="@color/text_dark"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="Masukkan password"
+                        android:inputType="textPassword"
+                        android:paddingHorizontal="14dp"
+                        android:textColor="@color/text_dark"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/bg_btn_login"
+                        android:text="Masuk"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvHubungiAdmin"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="20dp"
-            android:text="Login" />
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:gravity="center"-->
-<!--            android:text="Akun Admin awal: admin@komplek.com / admin123\nAkun Warga dibuat oleh Admin di menu Data Warga."-->
-<!--            android:textColor="#000000"-->
-<!--            android:textSize="12sp" />-->
-    </LinearLayout>
-</ScrollView>
+                android:layout_marginTop="20dp"
+                android:text="Belum punya akun? Hubungi Admin"
+                android:textColor="@color/text_dark"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

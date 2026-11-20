@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="navy_primary">#425B9A</color>
+    <color name="navy_dark">#2E4378</color>
+    <color name="sky_blue">#76C0EC</color>
+    <color name="sky_blue_soft">#CBE8F8</color>
+    <color name="warm_cream">#FFF6DC</color>
+    <color name="warm_cream_soft">#FFFDF5</color>
+    <color name="coral_pink">#FF95A5</color>
+    <color name="coral_pink_soft">#FFD4DB</color>
+    <color name="white">#FFFFFF</color>
+    <color name="glass_white">#CCFFFFFF</color>
+    <color name="glass_border">#66FFFFFF</color>
+    <color name="text_dark">#1E293B</color>
+    <color name="text_muted">#64748B</color>
+    <color name="status_lunas">#16A34A</color>
+    <color name="status_keluar">#DC2626</color>
 </resources>
