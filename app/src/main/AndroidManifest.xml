@@ -37,10 +37,6 @@
             android:name=".LaporanKeuangan"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".StatusPembayaran"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
